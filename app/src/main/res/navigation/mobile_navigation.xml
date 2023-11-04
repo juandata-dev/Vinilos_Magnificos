@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Este archivo XML define la estructura de navegación de la aplicación. -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_album">
+
+    <!-- Este fragmento representa la pantalla de álbumes en la aplicación. -->
+    <fragment
+        android:id="@+id/nav_album"
+        android:name="co.edu.uniandes.vinilotunes.ui.album.AlbumFragment"
+        android:label=""
+        tools:layout="@layout/fragment_album" />
+
+    <!-- Este fragmento representa la pantalla de galería en la aplicación. -->
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="co.edu.uniandes.vinilotunes.ui.gallery.GalleryFragment"
+        android:label=""
+        tools:layout="@layout/fragment_gallery" />
+
+    <!-- Este fragmento representa la pantalla de inicio en la aplicación. -->
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="co.edu.uniandes.vinilotunes.ui.home.HomeFragment"
+        android:label=""
+        tools:layout="@layout/fragment_home" />
+
+    <!-- Este fragmento representa la pantalla de presentación de diapositivas en la aplicación. -->
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="co.edu.uniandes.vinilotunes.ui.slideshow.SlideshowFragment"
+        android:label=""
+        tools:layout="@layout/fragment_slideshow" />
+</navigation>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Este es el diseño principal que envuelve toda la interfaz de usuario de la actividad. -->
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <!-- AppBarLayout es una vista que contiene la barra de aplicaciones en la parte superior. -->
+    <!-- Aquí definimos su ancho, alto y tema. -->
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:theme="@style/Theme.Vinilos.AppBarOverlay">
+
+
+        <!-- Toolbar es la barra de herramientas que se encuentra en la parte superior. -->
+        <!-- Definimos su ancho, alto, color de fondo y temas de superposición. -->
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:background="#2B2B2B"
+            android:padding="0dp"
+            app:popupTheme="@style/Theme.Vinilos.PopupOverlay">
+
+
+            <!-- TextView es un elemento de texto en la barra de herramientas. -->
+            <!-- Definimos su ancho, alto, gravedad para centrarlo y otros atributos como el texto, tamaño de texto, color de texto y fuente. -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/nav_header_title"
+                android:textSize="35sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/fascinate"
+            />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Include es un elemento que permite incluir otro diseño dentro de este. -->
+
+    <include
+        layout="@layout/content_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Este es un menú que se utiliza para configurar las opciones de navegación en un DrawerLayout. -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+
+    <!-- Un grupo de elementos de menú con comportamiento de selección desactivado -->
+    <group android:checkableBehavior="none">
+
+        <!-- Elemento de menú para navegar a la sección de álbumes -->
+        <item
+            android:id="@+id/nav_album"
+            android:icon="@drawable/guitar"
+            android:title="@string/menu_artists"
+        />
+
+        <!-- Elemento de menú para navegar a la sección de galería de imágenes -->
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/album"
+            android:title="@string/menu_albums"
+        />
+
+        <!-- Elemento de menú para navegar a la sección de inicio -->
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/collector"
+            android:title="@string/menu_collectors"
+        />
+
+        <!-- Elemento de menú para salir de la aplicación -->
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/exit"
+            android:title="@string/menu_exit"
+        />
+
+    </group>
+</menu>
