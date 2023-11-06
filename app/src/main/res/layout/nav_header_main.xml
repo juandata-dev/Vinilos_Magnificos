@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Este archivo XML define el diseño del encabezado del menú lateral en la aplicación. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:background="@drawable/side_nav_bar"
+    android:gravity="center"
+    android:paddingLeft="@dimen/nav_header_padding"
+    android:paddingTop="@dimen/nav_header_padding"
+    android:paddingRight= "@dimen/nav_header_padding"
+    android:paddingBottom="@dimen/nav_header_padding"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <!-- Aquí se coloca una imagen (ImageView) en el encabezado del menú lateral. -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/head_menu"
+        android:contentDescription="@string/nav_header_desc" />
+
+</LinearLayout>

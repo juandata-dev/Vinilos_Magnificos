@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="MenuItemStyle">
+        <item name="android:background">@color/main_drawer_color</item>
+        <item name="android:itemBackground">@null</item>
+        <item name="android:fontFamily">@font/comfortaa</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="itemTextColor">@color/white</item>
+    </style>
+    <style name="MyNavigationViewTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:colorControlNormal">@color/white</item>
+        <item name="itemIconTint">@color/white</item>
+        <item name="itemTextColor">@color/white</item>
+        <item name="iconTint">@android:color/white</item>
+    </style>
+    <style name="FAB_Circular_Style" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    </resources>
