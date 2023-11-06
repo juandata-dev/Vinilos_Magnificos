@@ -1,4 +1,4 @@
-# ViniloTunes Android App
+# Vinilos_Magnificos
 
 ## Descripción
 La aplicación ViniloTunes es una aplicación Android que permite a los usuarios explorar y descubrir álbumes de música, ver detalles de álbumes individuales y agregar sus canciones favoritas a listas de reproducción.
@@ -12,7 +12,7 @@ Siga estos pasos para configurar y ejecutar la aplicación en su entorno local:
 
 ## Clona este repositorio en tu máquina local:
    ```bash
-   git clone https://github.com/tuusuario/vinilotunes-android.git
+   git clone https://github.com/juandata-dev/Vinilos_Magnificos.git
    
    Abre Android Studio.
 
@@ -64,10 +64,4 @@ Abre un Pull Request en el repositorio original.
 Espera a que tus cambios sean revisados y fusionados.
 
 Créditos
-La aplicación ViniloTunes fue desarrollada por [Tu Nombre] y el equipo de desarrollo de ViniloTunes.
-
-Licencia
-Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para obtener más detalles.
-
-
-Asegúrate de reemplazar `[Tu Nombre]` con tu nombre o el nombre de tu equipo, y ajustar las URL de las capturas de pantalla y otros detalles según tu proyecto.
+La aplicación ViniloTunes fue desarrollada por Alvaro Salazar, Felix Orduz, Jaun David Torres y Daniel Buelvas equipo de desarrollo de ViniloTunes.
