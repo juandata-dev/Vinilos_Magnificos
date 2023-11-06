@@ -11,14 +11,14 @@
 
         <!-- Elemento de menú para navegar a la sección de álbumes -->
         <item
-            android:id="@+id/nav_album"
+            android:id="@+id/nav_gallery"
             android:icon="@drawable/guitar"
             android:title="@string/menu_artists"
         />
 
         <!-- Elemento de menú para navegar a la sección de galería de imágenes -->
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_album"
             android:icon="@drawable/album"
             android:title="@string/menu_albums"
         />

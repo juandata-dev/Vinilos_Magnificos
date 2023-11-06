@@ -7,19 +7,19 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@id/nav_album">
 
-    <!-- Este fragmento representa la pantalla de álbumes en la aplicación. -->
-    <fragment
-        android:id="@+id/nav_album"
-        android:name="co.edu.uniandes.vinilotunes.ui.album.AlbumFragment"
-        android:label=""
-        tools:layout="@layout/fragment_album" />
-
     <!-- Este fragmento representa la pantalla de galería en la aplicación. -->
     <fragment
         android:id="@+id/nav_gallery"
         android:name="co.edu.uniandes.vinilotunes.ui.gallery.GalleryFragment"
         android:label=""
         tools:layout="@layout/fragment_gallery" />
+
+    <!-- Este fragmento representa la pantalla de álbumes en la aplicación. -->
+    <fragment
+        android:id="@+id/nav_album"
+        android:name="co.edu.uniandes.vinilotunes.ui.album.AlbumFragment"
+        android:label=""
+        tools:layout="@layout/fragment_album" />
 
     <!-- Este fragmento representa la pantalla de inicio en la aplicación. -->
     <fragment
@@ -34,4 +34,11 @@
         android:name="co.edu.uniandes.vinilotunes.ui.slideshow.SlideshowFragment"
         android:label=""
         tools:layout="@layout/fragment_slideshow" />
+
+    <!-- Este fragmento representa la pantalla de presentación de diapositivas en la aplicación. -->
+    <fragment
+        android:id="@+id/nav_album_detail"
+        android:name="co.edu.uniandes.vinilotunes.ui.album.AlbumDetailFragment"
+        android:label=""
+        tools:layout="@layout/fragment_album_detail" />
 </navigation>

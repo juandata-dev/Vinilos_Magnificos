@@ -12,4 +12,23 @@
     <string name="menu_collectors">Collectors</string>
     <string name="menu_exit">Exit</string>
     <string name="add">Add</string>
+
+    <string name="template_album_content_description">Cover</string>
+    <string name="template_album_cd_ivAlbum">Album cover</string>
+    <string name="template_album_cd_tvAlbumName">Album name</string>
+    <string name="template_album_cd_tvArtistName">Artist name</string>
+    <string name="template_album_cd_tvGenre">Genre</string>
+    <string name="template_album_cd_tvRecordLabel">Record label</string>
+    <string name="template_album_cd_tvTracks">Tracks</string>
+    <string name="template_album_cd_tvDescription">Description</string>
+    <string name="template_album_cd_tvPerformers">Performers</string>
+    <string name="template_album_cd_tvPerformersName">Name</string>
+    <string name="template_album_cd_tvPerformersRole">Role</string>
+    <string name="template_album_cd_tvPerformersRoleVocal">Vocal</string>
+    <string name="activity_album_detail_no_performers">No performer info</string>
+    <string name="activity_album_no_tracks">No tracks info</string>
+
+
+
+
 </resources>
