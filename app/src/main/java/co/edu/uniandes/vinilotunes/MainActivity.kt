@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         // Definir configuración de la barra de aplicaciones y el menú lateral
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_gallery, R.id.nav_album, R.id.nav_home, R.id.nav_slideshow
+                R.id.nav_artists, R.id.nav_album, R.id.nav_home, R.id.nav_slideshow
             ), drawerLayout
         )
 

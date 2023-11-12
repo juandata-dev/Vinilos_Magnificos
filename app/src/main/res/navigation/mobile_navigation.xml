@@ -9,10 +9,10 @@
 
     <!-- Este fragmento representa la pantalla de galería en la aplicación. -->
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="co.edu.uniandes.vinilotunes.ui.gallery.GalleryFragment"
+        android:id="@+id/nav_artists"
+        android:name="co.edu.uniandes.vinilotunes.ui.artist.ArtistsFragment"
         android:label=""
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_artists" />
 
     <!-- Este fragmento representa la pantalla de álbumes en la aplicación. -->
     <fragment

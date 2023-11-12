@@ -27,8 +27,9 @@
     <string name="template_album_cd_tvPerformersRoleVocal">Vocal</string>
     <string name="activity_album_detail_no_performers">No performer info</string>
     <string name="activity_album_no_tracks">No tracks info</string>
-
-
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="artist_list">Artist List</string>
 
 
 </resources>
