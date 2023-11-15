@@ -13,55 +13,25 @@ Siga estos pasos para configurar y ejecutar la aplicación en su entorno local:
 ## Clona este repositorio en tu máquina local:
    ```bash
    git clone https://github.com/juandata-dev/Vinilos_Magnificos.git
-   
-   Abre Android Studio.
+   ```
+## Abra Android Studio.
 
 En el menú principal, selecciona "File" > "Open" y navega a la carpeta del proyecto clonado. Haz clic en "OK" para abrir el proyecto.
 
-Configura el backend:
+## Configure el backend:
 
 El backend de la aplicación se encuentra en un servidor aprovisionado por el equipo [URL](http://miso.denkitronik.com:3000) Asegúrese de que el backend esté en funcionamiento y accesible desde tu dispositivo.
-Abre el archivo Constants.kt en el directorio app/src/main/java/co/edu/uniandes/vinilotunes/util y configura la constante BASE_URL con la URL de tu backend.
-Construye y ejecuta la aplicación:
+Abra el archivo Constants.kt en el directorio app/src/main/java/co/edu/uniandes/vinilotunes/util y configura la constante BASE_URL con la URL de tu backend.
+
+## Construye y ejecuta la aplicación:
 
 Conecta un dispositivo Android a tu computadora o utiliza un emulador.
-Haz clic en el botón "Run" en Android Studio y selecciona tu dispositivo de destino.
+Haga clic en el botón "Run" en Android Studio y selecciona tu dispositivo de destino.
 La aplicación se instalará en tu dispositivo y se ejecutará.
 
-Funcionalidades
-Explora álbumes de música.
-Ver detalles de un álbum, incluida la lista de canciones y los intérpretes.
-Agregar canciones a listas de reproducción.
-Capturas de pantalla
-Captura de pantalla 1
-Captura de pantalla 2
-Captura de pantalla 3
+## Funcionalidades
+- Explora álbumes de música.
+- Ver detalles de un álbum, incluida la lista de canciones y los intérpretes.
 
-Contribuir
-Si deseas contribuir al desarrollo de la aplicación, sigue estos pasos:
-
-Realiza un fork del repositorio.
-
-Clona tu repositorio bifurcado en tu máquina local.
-
-Crea una nueva rama para tu función o corrección:
-
-bash
-Copy code
-git checkout -b mi-funcion-o-correccion
-Haz tus cambios y confirma (commit) tus modificaciones:
-
-bash
-Copy code
-git commit -m "Añadida una nueva función"
-Sube tus cambios a tu repositorio en GitHub:
-
-bash
-Copy code
-git push origin mi-funcion-o-correccion
-Abre un Pull Request en el repositorio original.
-
-Espera a que tus cambios sean revisados y fusionados.
-
-Créditos
-La aplicación ViniloTunes fue desarrollada por Alvaro Salazar, Felix Orduz, Jaun David Torres y Daniel Buelvas equipo de desarrollo de ViniloTunes.
+## Créditos
+La aplicación ViniloTunes fue desarrollada por Alvaro Salazar, Felix Orduz, Juan David Torres y Daniel Buelvas equipo de desarrollo de ViniloTunes.
