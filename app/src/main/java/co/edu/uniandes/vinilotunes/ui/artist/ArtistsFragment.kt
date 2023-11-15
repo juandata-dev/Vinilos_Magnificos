@@ -88,7 +88,7 @@ class ArtistsFragment : Fragment() {
         val bundle = Bundle()
         bundle.putInt("artist_id", id) // Aquí debes proporcionar el valor del ID del artista
 
-//        findNavController().navigate(R.id.nav_artist_detail, bundle)
+        findNavController().navigate(R.id.nav_artist_detail, bundle)
 
     }
 
