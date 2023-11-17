@@ -42,4 +42,6 @@ object VinilosApiClient {
     val albums: AlbumApi = apiRetrofit.create(AlbumApi::class.java)
 
     val artist: ArtistApi = apiRetrofit.create(ArtistApi::class.java)
+
+    val collectors: CollectorApi = apiRetrofit.create(CollectorApi::class.java)
 }

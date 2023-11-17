@@ -48,4 +48,11 @@
         android:name="co.edu.uniandes.vinilotunes.ui.artist.ArtistsDetailsFragment"
         android:label=""
         tools:layout="@layout/fragment_artists_details" />
+
+    <!-- Este fragmento representa la pantalla de presentación de diapositivas en la aplicación. -->
+    <fragment
+        android:id="@+id/nav_collector"
+        android:name="co.edu.uniandes.vinilotunes.ui.collector.CollectorFragment"
+        android:label=""
+        tools:layout="@layout/fragment_collector" />
 </navigation>

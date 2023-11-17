@@ -1,6 +1,8 @@
 package co.edu.uniandes.vinilotunes.data.net
 
 import co.edu.uniandes.vinilotunes.data.model.Album
+import co.edu.uniandes.vinilotunes.data.model.Collector
+import co.edu.uniandes.vinilotunes.data.model.CollectorAlbum
 import co.edu.uniandes.vinilotunes.data.model.Performer
 
 /**
@@ -58,6 +60,34 @@ class ApiService {
                 request.body()
             else
                 null
+        }
+
+        suspend fun getAllCollectors(): List<Collector> {
+
+            val request = VinilosApiClient.collectors.getAllCollectors()
+            return if (request.isSuccessful)
+                request.body() ?: listOf()
+            else
+                listOf()
+
+        }
+
+        suspend fun getAlbumesByIdCollector(id: Int): List<CollectorAlbum> {
+            val request = VinilosApiClient.collectors.getAlbumsByIdCollector(id.toString())
+            return if (request.isSuccessful)
+                request.body() ?: listOf()
+            else
+                listOf()
+
+        }
+
+        suspend fun getCollectorById(id: Int): Collector? {
+            val request = VinilosApiClient.collectors.getCollectorById(id.toString())
+            return if (request.isSuccessful)
+                request.body()
+            else
+                null
+
         }
 
     }
