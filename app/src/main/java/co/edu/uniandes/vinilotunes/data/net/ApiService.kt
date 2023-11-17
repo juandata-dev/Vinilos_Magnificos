@@ -1,6 +1,7 @@
 package co.edu.uniandes.vinilotunes.data.net
 
 import co.edu.uniandes.vinilotunes.data.model.Album
+import co.edu.uniandes.vinilotunes.data.model.Collector
 
 /**
  * Clase que proporciona métodos para interactuar con una API que maneja información sobre álbumes musicales.
@@ -37,6 +38,22 @@ class ApiService {
          */
         suspend fun getAlbumById (id: Int): Album? {
             val request = VinilosApiClient.albums.getAlbumById(id.toString())
+            return if (request.isSuccessful)
+                request.body()
+            else
+                null
+        }
+
+        suspend fun getAllCollector(): List<Collector> {
+            val request = VinilosApiClient.collector.getAllCollectors()
+            return if (request.isSuccessful)
+                request.body() ?: listOf()
+            else
+                listOf()
+        }
+
+        suspend fun getCollectorById(id: Int): Collector? {
+            val request = VinilosApiClient.collector.getCollectorById(id.toString())
             return if (request.isSuccessful)
                 request.body()
             else
