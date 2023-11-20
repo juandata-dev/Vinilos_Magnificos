@@ -11,17 +11,28 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
+
+/**
+ * Prueba la navegación de la aplicación desde el drawer de navegación
+ *
+ */
 @RunWith(AndroidJUnit4::class)
 class MainActivityTest {
 
     @get:Rule
     val activityRule = ActivityTestRule(MainActivity::class.java)
 
+    /**
+     * Prueba que exista el drawer de navegación
+     */
     @Test
     fun appLaunchesSuccessfully() {
         onView(withId(R.id.drawer_layout)).check(matches(isDisplayed()))
     }
 
+    /**
+     * Prueba que abre el drawer de navegación y verifica la navegación
+     */
     @Test
     fun openDrawer_andVerifyNavigation() {
         // Abre el drawer de navegación
@@ -30,10 +41,12 @@ class MainActivityTest {
         onView(withId(R.id.drawer_layout)).perform(DrawerActions.open())
 
         // Verifica si un ítem del menú está presente
-        onView(withId(R.id.nav_gallery)).check(matches(isDisplayed()))
+        onView(withId(R.id.nav_album)).check(matches(isDisplayed()))
 
         // Haz clic en el ítem del menú y verifica la navegación
-        onView(withId(R.id.nav_gallery)).perform(click())
-        // Aquí puedes añadir más verificaciones después de la navegación
+        onView(withId(R.id.nav_artists)).perform(click())
+
+        onView(withId(R.id.nav_artists)).check(matches(isDisplayed()))
+
     }
 }
