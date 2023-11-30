@@ -7,6 +7,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import co.edu.uniandes.vinilotunes.data.model.Collector
+import co.edu.uniandes.vinilotunes.data.model.CollectorAlbum
 import co.edu.uniandes.vinilotunes.data.repositories.CollectorRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -17,6 +18,8 @@ class CollectorViewModel(application: Application) : AndroidViewModel(applicatio
 
     // Utilizamos MutableLiveData para poder cambiar su valor dinámicamente. En este caso, el valor de la variable es un álbum.
     val collector = MutableLiveData<Collector>()
+
+    val albumesCollector = MutableLiveData<List<CollectorAlbum>>()
 
     // Variable que almacena el repositorio de artistas. El repositorio es el encargado de manejar la comunicación con el servidor.
     private val collectorRepository = CollectorRepository(application)
@@ -52,6 +55,16 @@ class CollectorViewModel(application: Application) : AndroidViewModel(applicatio
         try {
             viewModelScope.launch(Dispatchers.IO) {
                 collector.postValue(collectorRepository.getCollectorById(id))
+            }
+        } catch (e: Exception) {
+            Log.e("Error", e.message ?: "Failure service")
+        }
+    }
+
+    fun getAlbumesByIdCollector(id: Int) {
+        try {
+            viewModelScope.launch(Dispatchers.IO) {
+                albumesCollector.postValue(collectorRepository.getAlbumesByCollector(id))
             }
         } catch (e: Exception) {
             Log.e("Error", e.message ?: "Failure service")
