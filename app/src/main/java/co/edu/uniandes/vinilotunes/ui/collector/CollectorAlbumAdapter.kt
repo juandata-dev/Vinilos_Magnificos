@@ -102,7 +102,7 @@ class CollectorAlbumAdapter : RecyclerView.Adapter<CollectorAlbumAdapter.Collect
          */
         fun bind(collectorAlbum: CollectorAlbum, position: Int, handlerCollectorAlbumAdapter: CollectorAlbumAdapter) {
            // binding.collector = collectorAlbum
-            binding.tvCollectorAlbumPrice.text = "Price: ${collectorAlbum.price}"
+            binding.tvCollectorAlbumPrice.text = "Price: US$ ${collectorAlbum.price}"
             binding.tvCollectorAlbumStatus.text = "Status: ${collectorAlbum.status}"
             binding.position = position
             binding.collectorAlbumAdapter = handlerCollectorAlbumAdapter

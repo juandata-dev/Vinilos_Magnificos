@@ -1,83 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
-                name="collector"
-                type="co.edu.uniandes.vinilotunes.data.model.Collector" />
+            name="collector"
+            type="co.edu.uniandes.vinilotunes.data.model.Collector" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".ui.collector.CollectorDetailFragment">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.collector.CollectorDetailFragment">
 
         <View
             android:id="@+id/view"
-            android:layout_width="414dp"
+            android:layout_width="match_parent"
             android:layout_height="141dp"
+            android:layout_margin="10dp"
             android:background="#B3767676"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.0"/>
 
         <TextView
-                android:id="@+id/tvCollectorName"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:textSize="20sp"
-                android:text="@{collector.name}"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Roberto Blades" />
+            android:id="@+id/tvCollectorName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{collector.name}"
+            android:fontFamily="@font/encodesans"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Roberto Blades" />
 
         <TextView
-                android:id="@+id/tvCollectorPhone"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textSize="16sp"
-                android:text="@{collector.telephone}"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/tvCollectorName"
-                app:layout_constraintStart_toStartOf="@+id/tvCollectorName"
-                app:layout_constraintTop_toBottomOf="@+id/tvCollectorName"
-                tools:text="311223344" />
+            android:id="@+id/tvCollectorPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/encodesans"
+            android:text="@{collector.telephone}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvCollectorName"
+            app:layout_constraintStart_toStartOf="@+id/tvCollectorName"
+            app:layout_constraintTop_toBottomOf="@+id/tvCollectorName"
+            tools:text="311223344" />
 
         <TextView
-                android:id="@+id/tvCollectorEmail"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textSize="16sp"
-                android:textStyle="italic"
-                android:text="@{collector.email}"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/tvCollectorPhone"
-                app:layout_constraintStart_toStartOf="@+id/tvCollectorPhone"
-                app:layout_constraintTop_toBottomOf="@+id/tvCollectorPhone"
-                tools:text="collectoremail@uniandes.edu.co" />
+            android:id="@+id/tvCollectorEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/encodesans"
+            android:text="@{collector.email}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="@+id/tvCollectorPhone"
+            app:layout_constraintStart_toStartOf="@+id/tvCollectorPhone"
+            app:layout_constraintTop_toBottomOf="@+id/tvCollectorPhone"
+            tools:text="collectoremail@uniandes.edu.co" />
 
         <TextView
             android:id="@+id/tvLabelAlbums"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="156dp"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/encodesans"
+            android:gravity="center|center_horizontal"
             android:text="@string/fragment_collector_detail_albums"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/tvCollectorEmail"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvCollectorEmail" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -97,14 +110,14 @@
             tools:listitem="@layout/item_collector_album" />
 
         <TextView
-                android:id="@+id/tvLabelNoAlbums"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/fragment_collector_detail_no_albums"
-                android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tvLabelAlbums"
-                app:layout_constraintTop_toBottomOf="@+id/tvLabelAlbums" />
+            android:id="@+id/tvLabelNoAlbums"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/fragment_collector_detail_no_albums"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvLabelAlbums"
+            app:layout_constraintTop_toBottomOf="@+id/tvLabelAlbums" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
