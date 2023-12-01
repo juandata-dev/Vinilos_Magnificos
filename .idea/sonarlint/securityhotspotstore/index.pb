@@ -15,3 +15,7 @@ z
 Japp/src/main/java/co/edu/uniandes/vinilotunes/ui/artist/ArtistViewModel.kt,a\1\a11b9e9d3079cfc1ddc359adc6b3b35c8d4d30ad
 z
 Japp/src/main/java/co/edu/uniandes/vinilotunes/ui/artist/ArtistsFragment.kt,b\0\b09a2d9139aba6ccdb2b234ad90bd8476ca733dd
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+z
+Japp/src/androidTest/java/co/edu/uniandes/vinilotunes/ui/album/AlbumTest.kt,5\e\5eb8fe7d284457c5c900fe7a973ef7403655a870
