@@ -5,19 +5,16 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import co.edu.uniandes.vinilotunes.R
 import co.edu.uniandes.vinilotunes.data.model.Album
+import co.edu.uniandes.vinilotunes.data.model.CollectorAlbum
 import co.edu.uniandes.vinilotunes.databinding.FragmentCollectorDetailBinding
-import co.edu.uniandes.vinilotunes.ui.album.AlbumAdapter
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
@@ -27,7 +24,7 @@ private const val ARG_PARAM2 = "param2"
 class CollectorDetailFragment : Fragment() {
     private lateinit var collectorViewModel: CollectorViewModel
     private lateinit var binding: FragmentCollectorDetailBinding
-    private var adapter = AlbumAdapter()
+    private var collectorAlbumAdapter = CollectorAlbumAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,16 +35,15 @@ class CollectorDetailFragment : Fragment() {
             inflater, R.layout.fragment_collector_detail, container, false
         )
 
-        // Configura ViewModel
-        collectorViewModel = ViewModelProvider(this).get(CollectorViewModel::class.java)
-
+        collectorViewModel = ViewModelProvider(this)[CollectorViewModel::class.java] // Configura ViewModel
+        binding.rvCollectorAlbums.adapter = collectorAlbumAdapter
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Recupera el ID del álbum del argumento
+        // Recupera el ID del collecionista del argumento
         val collectorId = arguments?.getInt("collector_id")
 
         // Verifica que el ID no sea nulo y luego carga los detalles del álbum
@@ -56,7 +52,6 @@ class CollectorDetailFragment : Fragment() {
             Log.d("Debug", "CollectorDetailFragment Collector ID: $collectorId"   )
 
             collectorViewModel.getCollectorById(collectorId)
-
 
             // Observa el LiveData para recibir los detalles del collecionista
             collectorViewModel.collector.observe(viewLifecycleOwner) { collector ->
@@ -67,17 +62,23 @@ class CollectorDetailFragment : Fragment() {
                 }
             }
 
-            collectorViewModel.albumesCollector.observe(viewLifecycleOwner) { list ->
+            collectorViewModel.albumesCollector.observe(viewLifecycleOwner) { collectorAlbumsList ->
                 val albumes: MutableList<Album> = mutableListOf()
 
-                for (i in list.indices)
-                    albumes.add(list[i].album)
-
-
+                for (i in collectorAlbumsList.indices) {
+                    albumes.add(collectorAlbumsList[i].album)
+                }
                 if (albumes.isNotEmpty()) {
-                    adapter.albumList = albumes
-                    binding.rvCollectorAlbums.adapter = adapter
-                    Log.d("Debug", "myAlbums: ${adapter.albumList[0]}")
+                    binding.rvCollectorAlbums.visibility = View.VISIBLE
+                    binding.tvLabelNoAlbums.visibility = View.GONE
+
+                    collectorAlbumAdapter.collectorAlbumList = collectorAlbumsList
+                    binding.rvCollectorAlbums.adapter = collectorAlbumAdapter
+                    Log.d("Debug", "myAlbums: ${collectorAlbumAdapter.collectorAlbumList[0].album.cover}")
+
+                } else {
+                    binding.rvCollectorAlbums.visibility = View.GONE
+                    binding.tvLabelNoAlbums.visibility = View.VISIBLE
                 }
 
             }

@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- Este bloque hace el binding de datos del album de este viewHolder con el adapter -->
+    <!-- Este bloque hace el binding de datos del collecionista de este viewHolder con el adapter -->
     <data>
         <variable
             name="collector"
