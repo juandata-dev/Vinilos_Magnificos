@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import co.edu.uniandes.vinilotunes.R
 import co.edu.uniandes.vinilotunes.databinding.FragmentCollectorBinding
 
 class CollectorFragment : Fragment() {
@@ -69,6 +71,7 @@ class CollectorFragment : Fragment() {
     }
 
 
+
     /**
      * Metodo que se encarga de navegar a la vista de detalle de un Coleccionista.
      *
@@ -79,7 +82,7 @@ class CollectorFragment : Fragment() {
         val bundle = Bundle()
         bundle.putInt("collector_id", id) // Aquí debes proporcionar el valor del ID del Coleccionista
 
-//        findNavController().navigate(R.id.nav_collector_detail, bundle)
+        findNavController().navigate(R.id.nav_collector_detail, bundle)
 
     }
 }
