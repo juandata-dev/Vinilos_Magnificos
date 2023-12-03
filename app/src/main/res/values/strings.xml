@@ -41,6 +41,7 @@
     <string name="fragment_album_track_hint_seconds_track">Seconds</string>
     <string name="button_cancel">Cancel</string>
     <string name="button_create">Create Track</string>
+    <string name="botonfab">add track button</string>
 
 
 </resources>
