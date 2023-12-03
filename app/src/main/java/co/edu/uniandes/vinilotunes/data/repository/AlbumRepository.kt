@@ -69,7 +69,7 @@ class AlbumRepository (val application: Application) {
         //suspend fun getAllAlbums(): List<Album> = ApiService.getAllAlbums()
         return try {
             val cacheManager = CacheManager.getInstance(application.applicationContext)
-            val cachedAlbumList = cacheManager.getAlbumList()
+            cacheManager.delAlbums()
             Log.d("DEBUG", "Fetching from network for Album list")
             val albums = ApiService.getAllAlbums() ?: emptyList()
             Log.d("DEBUG", "Returning Album list from API")
@@ -94,5 +94,7 @@ class AlbumRepository (val application: Application) {
         }
 
     }
+
+    suspend fun createAlbum(album: Album) = ApiService.insertAlbum(album)
 
 }

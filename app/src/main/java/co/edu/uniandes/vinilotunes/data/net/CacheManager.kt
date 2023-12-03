@@ -148,6 +148,10 @@ class CacheManager private constructor(context: Context) {
         albums.clear()
     }
 
+    fun delAlbums() {
+        (albumList as MutableList<Album>).clear()
+    }
+
 
     /**
      *  Singleton para la clase CacheManager
