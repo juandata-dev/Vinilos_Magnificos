@@ -101,5 +101,13 @@ class ApiService {
                 null
         }
 
+        suspend fun insertAlbum(album: Album): Album? {
+            Log.d("Insertando album","Vamos a insertar el album "+album.name)
+            val request = VinilosApiClient.albums.insertAlbum(album)
+            return if (request.isSuccessful)
+                request.body()
+            else
+                null
+        }
     }
 }

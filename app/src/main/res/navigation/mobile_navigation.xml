@@ -69,4 +69,11 @@
         android:name="co.edu.uniandes.vinilotunes.ui.track.AddTrackFragment"
         android:label=""
         tools:layout="@layout/fragment_add_track" />
+
+    <!-- Este fragmento representa la pantalla de presentación de diapositivas en la aplicación. -->
+    <fragment
+        android:id="@+id/nav_add_album"
+        android:name="co.edu.uniandes.vinilotunes.ui.album.AlbumCreateFragment"
+        android:label=""
+        tools:layout="@layout/fragment_album_create" />
 </navigation>
