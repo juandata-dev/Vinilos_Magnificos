@@ -7,6 +7,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import co.edu.uniandes.vinilotunes.data.model.Album
+import co.edu.uniandes.vinilotunes.data.model.Track
+import co.edu.uniandes.vinilotunes.data.net.CacheManager
 import co.edu.uniandes.vinilotunes.data.repository.AlbumRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -16,6 +18,8 @@ import kotlinx.coroutines.launch
  * @property application La aplicación que se está ejecutando.
  */
 class AlbumViewModel(application: Application) : AndroidViewModel(application) {
+
+    val trackAdded = MutableLiveData<Track>()
 
     // Utilizamos MutableLiveData para poder cambiar su valor dinámicamente. En este caso, el valor de la variable es una lista de álbumes.
     val listAlbums = MutableLiveData<List<Album>>()
@@ -48,10 +52,34 @@ class AlbumViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    fun invalidateCache() {
+        albumsRepository.invalidateCache()
+    }
+
     fun getAlbumById(id: Int) {
         try {
             viewModelScope.launch(Dispatchers.IO) {
                 album.postValue(albumsRepository.getAlbumById(id))
+            }
+        } catch (e: Exception) {
+            Log.e("Error", e.message ?: "Failure service")
+        }
+    }
+
+    fun addTrackAlbum(id: String, track: Track) {
+        try {
+            viewModelScope.launch(Dispatchers.IO) {
+                trackAdded.postValue(albumsRepository.addTrackAlbum(id, track))
+            }
+        } catch (e: java.lang.Exception) {
+            Log.e("Error", e.message ?: "Failure service")
+        }
+    }
+
+    fun getAlbumsFromApi() {
+        try {
+            viewModelScope.launch(Dispatchers.IO) {// Corutina que se ejecuta en un hilo secundario.
+                listAlbums.postValue(albumsRepository.getAllAlbumsFromApi()) // Se obtienen los álbumes y se actualiza el valor de la variable.
             }
         } catch (e: Exception) {
             Log.e("Error", e.message ?: "Failure service")

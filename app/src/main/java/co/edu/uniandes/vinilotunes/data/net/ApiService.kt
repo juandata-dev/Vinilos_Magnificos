@@ -1,9 +1,11 @@
 package co.edu.uniandes.vinilotunes.data.net
 
+import android.util.Log
 import co.edu.uniandes.vinilotunes.data.model.Album
 import co.edu.uniandes.vinilotunes.data.model.Collector
 import co.edu.uniandes.vinilotunes.data.model.CollectorAlbum
 import co.edu.uniandes.vinilotunes.data.model.Performer
+import co.edu.uniandes.vinilotunes.data.model.Track
 
 /**
  * Clase que proporciona métodos para interactuar con una API que maneja información sobre álbumes musicales.
@@ -25,6 +27,7 @@ class ApiService {
          */
         suspend fun getAllAlbums(): List<Album> {
             val request = VinilosApiClient.albums.getAllAlbums()
+            Log.d("DEBUG", "Returning Album list from API")
             return if (request.isSuccessful)
                 request.body() ?: listOf()
             else
@@ -88,6 +91,14 @@ class ApiService {
             else
                 null
 
+        }
+
+        suspend fun addTrackAlbum(id: String, track: Track): Track? {
+            val request = VinilosApiClient.albums.addTrackToAlbum(id, track)
+            return if (request.isSuccessful)
+                request.body()
+            else
+                null
         }
 
     }

@@ -1,5 +1,6 @@
 package co.edu.uniandes.vinilotunes.ui.album
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import co.edu.uniandes.vinilotunes.R
 import co.edu.uniandes.vinilotunes.databinding.FragmentAlbumDetailBinding
 
@@ -46,7 +48,6 @@ class AlbumDetailFragment : Fragment() {
 
         // Configura ViewModel
         albumDetailViewModel = ViewModelProvider(this).get(AlbumDetailViewModel::class.java)
-
         return binding.root
     }
 
@@ -62,19 +63,32 @@ class AlbumDetailFragment : Fragment() {
 
         // Recupera el ID del álbum del argumento
         val albumId = arguments?.getInt("album_id")
+        val update = arguments?.getInt("update")
 
         // Verifica que el ID no sea nulo y luego carga los detalles del álbum
         if (albumId != null) {
 
-            Log.d("Debug", "AlbumDetailFragment Album ID: $albumId"   )
+            Log.d("DEBUG", "AlbumDetailFragment Album ID: $albumId")
 
-            // Utiliza el ID del álbum para cargar los detalles del álbum desde el repositorio
-            albumDetailViewModel.getAlbumById(albumId)
+            if (update == 1) {
+                albumDetailViewModel.getAlbumByIdApi(albumId)
+            } else {
+                albumDetailViewModel.getAlbumById(albumId)
+            }
 
             // Observa el LiveData para recibir los detalles del álbum
             albumDetailViewModel.album.observe(viewLifecycleOwner) { album ->
                 if (album != null) { // Los detalles del álbum están disponibles
+                    Log.d("DEBUG", "AlbumDetailFragment Album recibido: $album")
                     binding.album = album  // Actualiza la vista con los detalles del álbum
+                    binding.fabAddTrack.setOnClickListener {
+                        val bundle = Bundle()
+                        bundle.putInt(
+                            "album_id",
+                            albumId
+                        ) // Aquí debes proporcionar el valor del ID del álbum
+                        findNavController().navigate(R.id.nav_add_track, bundle)
+                    }
                 }
             }
         }

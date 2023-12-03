@@ -16,6 +16,10 @@
     </style>
     <style name="FAB_Circular_Style" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">50%</item>
+        <item name="cornerSize">70%</item>
+    </style>
+    <style name="ButtonTheme">
+        <item name="android:colorButtonNormal">#000000</item>
+        <item name="android:background">#000000</item>
     </style>
     </resources>
