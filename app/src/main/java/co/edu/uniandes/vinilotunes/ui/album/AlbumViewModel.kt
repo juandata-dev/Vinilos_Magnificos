@@ -35,6 +35,8 @@ class AlbumViewModel(application: Application) : AndroidViewModel(application) {
         value = "This is album Fragment"
     }
 
+    val albumCreated = MutableLiveData<Album>()
+
     // LiveData es una clase que se utiliza para notificar a las vistas cuando los datos cambian. En este caso, el valor de la variable es un texto.
     val text: LiveData<String> = _text
 
@@ -82,6 +84,16 @@ class AlbumViewModel(application: Application) : AndroidViewModel(application) {
                 listAlbums.postValue(albumsRepository.getAllAlbumsFromApi()) // Se obtienen los álbumes y se actualiza el valor de la variable.
             }
         } catch (e: Exception) {
+            Log.e("Error", e.message ?: "Failure service")
+        }
+    }
+
+    fun insertAlbum(album: Album) {
+        try {
+            viewModelScope.launch(Dispatchers.IO) {
+                albumCreated.postValue(albumsRepository.createAlbum(album))
+            }
+        } catch (e: java.lang.Exception) {
             Log.e("Error", e.message ?: "Failure service")
         }
     }

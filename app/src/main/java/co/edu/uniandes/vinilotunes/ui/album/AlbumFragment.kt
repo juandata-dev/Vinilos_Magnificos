@@ -63,15 +63,40 @@ class AlbumFragment : Fragment() {
             albumAdapter.albumList = it // Actualiza la lista de álbumes.
         }
 
+        binding.fabAddTrack.setOnClickListener {
+            val bundle = Bundle()
+            findNavController().navigate(R.id.nav_add_album, bundle)
+        }
+
         return root // Devuelve la vista raíz.
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val update = arguments?.getInt("update")
+
+        if (update == 1) {
+            albumViewModel.getAlbumsFromApi()
+        } else {
+            albumViewModel.getAlbums()
+        }
+
+    }
+
 
     /**
      * Método que se llama cuando el fragmento se ha hecho visible.
      */
     override fun onResume() {
         super.onResume()
-        albumViewModel.getAlbums()
+        val update = arguments?.getInt("update")
+
+        if (update == 1) {
+            albumViewModel.getAlbumsFromApi()
+        } else {
+            albumViewModel.getAlbums()
+        }
     }
 
     /**
