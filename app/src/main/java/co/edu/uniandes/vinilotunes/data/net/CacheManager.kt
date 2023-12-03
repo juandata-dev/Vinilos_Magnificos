@@ -137,6 +137,17 @@ class CacheManager private constructor(context: Context) {
      */
     fun getCollectorList(): List<Collector>? = collectorList.toList()
 
+    /**
+     * Invalida la caché de albumes
+     */
+    fun invalidateCache() {
+        (albumList as MutableList<Album>).clear()
+    }
+
+    fun delAlbum() {
+        albums.clear()
+    }
+
 
     /**
      *  Singleton para la clase CacheManager
